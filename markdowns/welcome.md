@@ -1,3 +1,3 @@
 # Run NickJS
 
-@[Test NickJS]({ "stubs": ["universe.js"], "command": "node_modules/mocha/bin/mocha universe.spec.js --reporter list" })
+@[Test NickJS]({ "stubs": ["nickjs.js"], "command": "node_modules/mocha/bin/mocha nick.spec.js --reporter list" })
