@@ -1,9 +1,9 @@
 ﻿﻿var assert = require('assert');
 var nickjs = require('./nick.js');
 
-it('should sum stars', function () {
+it("should return TEST", function () {
   try {
-    assert.equal("test", nickjs.launch("test"));
+    assert.equal("TEST", nickjs.launch("TEST"));
 
     printMessage("Success:", "Bien joué!");
   } catch (error) {
