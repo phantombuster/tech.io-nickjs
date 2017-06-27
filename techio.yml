@@ -1,0 +1,17 @@
+title : Node.JS
+
+# Table of contents
+plan:
+  - title: Welcome # Set the page title
+    statement: markdowns/welcome.md # Set the file path to the page content
+#  - title: Another Page
+#    statement: markdowns/another-page.md
+
+# Settings for your programming projects and the associated Docker images
+projects:
+  nodejs:
+    root: "/nodejs-project"
+    # Set the docker image. This image runs mocha tests using this syntax:
+    # @[Code Editor Title]({"stubs": ["EditorFile1.js", "EditorFile2.js", ...], "command": "node_modules/mocha/bin/mocha TestFile.js --reporter list"})
+    # More details here: https://github.com/CodinGame/node-npm-runner
+    runner: techio/node-npm-runner:latest
