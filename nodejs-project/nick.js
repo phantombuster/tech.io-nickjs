@@ -1,7 +1,7 @@
-const launch = text => text
+const launch = text => text;
 
 // { autofold
 module.exports = {
-  countAllStars: countAllStars
+  launch: launch
 };
 // }
