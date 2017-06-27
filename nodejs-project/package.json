@@ -1,8 +1,8 @@
 {
-  "name": "nodejs-project-template",
+  "name": "nickjs-demo",
   "version": "1.0.0",
   "description": "",
-  "author": "FERNANDEZ Quentin",
+  "author": "Antoine GUNZBURGER",
   "license": "ISC",
   "dependencies": {
     "mocha": "^3.4.2"
