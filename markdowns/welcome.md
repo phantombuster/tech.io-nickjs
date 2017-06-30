@@ -1,3 +1,3 @@
 # Run NickJS
 
-@[Test NickJS]({ "stubs": ["lib/nick.js"], "command": "./build-launch.sh" })
+@[Test NickJS]({ "stubs": ["src/nick.js"], "command": "./build-launch.sh" })
