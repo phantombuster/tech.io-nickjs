@@ -1,3 +1,3 @@
 # Run NickJS
 
-@[Test NickJS]({ "stubs": ["nick.js"], "command": "pwd" })
+@[Test NickJS]({ "stubs": ["nick.js"], "command": "ls" })
