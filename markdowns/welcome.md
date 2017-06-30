@@ -66,6 +66,10 @@ Here we are just going to `console.log()` it so we can see what we get:
 console.log(JSON.stringify(hackerNewsLinks, null, 2)) // Show the formatted data
 ```
 
+And here we are, we have successfuly scraped Hacker News in less than two minutes and 5 functions.
+
+Now go try it by your own and test other things (carefull the script is limited to 30 seconds execution)
+
 
 # Run NickJS
 
