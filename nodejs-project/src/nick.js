@@ -1,7 +1,9 @@
+// { autofold
 import 'babel-polyfill'
 
 import Nick from 'nickjs'
 const nick = new Nick()
+// }
 
 nick.newTab().then(async (tab) => {
 	await tab.open("news.ycombinator.com")
