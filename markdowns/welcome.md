@@ -11,10 +11,22 @@ Today we are going to see how to scrape the famous HackerNews forum in 3 easy st
 
 We first need to access the site thanks to NickJS so we need to load the page and here we start:
 ```language-javascript
-import 'babel-polyfill' // To be sure that all the code will be ES5
+import 'babel-polyfill'   // To be sure that all the code will be ES5
 
 import Nick from "nickjs" // Import our librairy
-const nick = new Nick()   // Instantiate your "browser"
+const nick = new Nick()   // Instantiate your "browser"$$
+
+nick.newTab(async (tab) => { // Create a new tab to browse the web
+	await tab.open("news.ycombinator.com")
+	// Now we have our tab and the url targeted by open loading
+})
+.then(() => {
+	nick.exit(0)
+})
+.catch((err) => {
+	console.log(err)
+	nick.exit(0)
+})
 ```
 
 # Run NickJS
