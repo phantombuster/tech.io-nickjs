@@ -54,7 +54,16 @@ const hackerNewsLinks = await tab.evaluate((arg, callback) => {
 		})
 	})
 	callback(null, data)
-})
+}) // We have all our infos in hackerNewsLinks
+```
+
+## Thrid step:
+
+We need to return the data, in a normal case we could save it in a file like a .CSV or .JSON.
+Here we are just going to `console.log()` it so we can see what we get:
+
+```
+console.log(JSON.stringify(hackerNewsLinks, null, 2)) // Show the formatted data
 ```
 
 
