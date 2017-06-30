@@ -21,11 +21,11 @@ nick.newTab(async (tab) => { // Create a new tab to browse the web
 	// Now we have our tab and the url targeted by open loading
 })
 .then(() => {
-	nick.exit(0)
+	nick.exit(0) // When we have finished our actions we quit with code '0'
 })
 .catch((err) => {
 	console.log(err)
-	nick.exit(0)
+	nick.exit(1) // When there is an error we quit with code '1'
 })
 ```
 
