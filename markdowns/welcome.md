@@ -7,6 +7,16 @@ Today we are going to see how to scrape the famous HackerNews forum in 3 easy st
 * Getting the data
 * Returning the data
 
+## First step:
+
+We first need to access the site thanks to NickJS so we need to load the page and here we start:
+```language-javascript
+import 'babel-polyfill' // To be sure that all the code will be ES5
+
+import Nick from "nickjs" // Import our librairy
+const nick = new Nick()   // Instantiate your "browser"
+```
+
 # Run NickJS
 
 @[Test NickJS]({ "stubs": ["src/nick.js"], "command": "./build-launch.sh" })
