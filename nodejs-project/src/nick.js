@@ -1,41 +1,34 @@
-import "babel-polyfill"
-
-import Nick from "nickjs"
+import 'babel-polyfill'
+import Nick from 'nickjs'
 const nick = new Nick()
 
-// Simple scraping function, getting all the infos using jQuery and returning them with the callback "done"
-const scrape = (arg, done) => {
-    var persons = document.querySelectorAll(".person")
-    var result = []
-    for (i in persons) {
-        if (i >= 0 && i <= 100) {
-        	result.push({
-        	    name: persons[i].querySelector(".name.property-value").innerText,
-        	    birth_year: persons[i].querySelector(".birth_year.property-value").innerText,
-        	    death_year: persons[i].querySelector(".death_year.property-value").innerText,
-        	    gender: persons[i].querySelector(".gender.property-value").innerText
-        	})
-        }
-    }
-    done(null, result)
-}
+nick.newTab().then(async function(tab) {
+    await tab.open('google.com')
+    await tab.waitUntilVisible(['input[name="q"]', 'form[name="f"]'])
+    await tab.fill('form[name="f"]', { q: 'this is just a test' })
+    await tab.sendKeys('form[name="f"]', tab.driver.casper.page.event.key.Enter)
+    await tab.waitUntilVisible('#fbar')
 
-nick.newTab().then(async (tab) => {
-	// Open the webpage
-	await tab.open("http://scraping-challenges.phantombuster.com/onepage")
-	// Wait for the data to be visible
-	await tab.waitUntilVisible(".person")
-	// Launch the scrape function in the page context
-	const result = await tab.evaluate(scrape)
-	// Take a screenshot of the whole page
-	await tab.screenshot("screenshot.jpg")
-	// Send the data in the result object
-	console.log(JSON.stringify(result, null, 2))
+    console.log('Saving screenshot as google.png...')
+    await tab.screenshot('google.png')
+
+    const content = await tab.getContent()
+    console.log('The content has ' + content.toString().length + ' bytes')
+
+    const url = await tab.getUrl()
+    console.log('The URL is ' + url)
+
+    console.log('Injecting jQuery...')
+    await tab.inject('https://code.jquery.com/jquery-3.1.1.slim.min.js')
+
+    console.log('Getting the title...')
+    const title = await tab.evaluate((arg, done) => {
+   	    done(null, jQuery('title').text())
+    })
+    console.log('The title is: ' + title)
 })
-.then(() => {
-	nick.exit(0)
-})
+.then(() => nick.exit())
 .catch((err) => {
-	console.log(`Something went wrong: ${err}`)
-	nick.exit(1)
+    console.log('Oops, an error occurred: ' + err)
+    nick.exit(1)
 })
