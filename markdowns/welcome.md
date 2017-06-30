@@ -7,6 +7,8 @@ Today we are going to see how to scrape the famous HackerNews forum in 3 easy st
 * Getting the data
 * Returning the data
 
+This will take less than 2 minutes and you only know how to code in JavaScript (async/await syntax).
+
 ## First step:
 
 We first need to access the site thanks to NickJS so we need to load the page and here we start:
@@ -31,7 +33,7 @@ nick.newTab(async (tab) => { // Create a new tab to browse the web
 
 ## Second step:
 
-Then we need to be sure the data is load, to do that nothing more simple:
+Then we need to be sure the data is loaded, to do that nothing more simple:
 ```
 nick.newTab(async (tab) => {
 	await tab.open("news.ycombinator.com")
