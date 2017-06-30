@@ -14,7 +14,7 @@ We first need to access the site thanks to NickJS so we need to load the page an
 import 'babel-polyfill'   // To be sure that all the code will be ES5
 
 import Nick from "nickjs" // Import our librairy
-const nick = new Nick()   // Instantiate your "browser"$$
+const nick = new Nick()   // Instantiate your "browser"
 
 nick.newTab(async (tab) => { // Create a new tab to browse the web
 	await tab.open("news.ycombinator.com")
@@ -28,6 +28,35 @@ nick.newTab(async (tab) => { // Create a new tab to browse the web
 	nick.exit(1) // When there is an error we quit with code '1'
 })
 ```
+
+## Second step:
+
+Then we need to be sure the data is load, to do that nothing more simple:
+```
+nick.newTab(async (tab) => {
+	await tab.open("news.ycombinator.com")
+	await tab.waitUntilVisible("#hnmain")
+	// Now your page is totally loaded
+})
+```
+
+And now we can scrape all the data we need with a little script and some jQuery.
+
+```
+await tab.inject("https://code.jquery.com/jquery-3.2.1.slim.min.js") // We're going to use jQuery to scrape
+const hackerNewsLinks = await tab.evaluate((arg, callback) => {
+	// Here we're in the page context. It's like being in your browser's inspector tool
+	const data = []
+	$(".athing").each((index, element) => {
+		data.push({
+			title: $(element).find(".storylink").text(),
+			url: $(element).find(".storylink").attr("href")
+		})
+	})
+	callback(null, data)
+})
+```
+
 
 # Run NickJS
 
