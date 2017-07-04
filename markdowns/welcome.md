@@ -13,9 +13,9 @@ This will take less than 2 minutes and you only know how to code in JavaScript (
 
 We first need to access the site thanks to NickJS so we need to load the page and here we start:
 ```javascript
-import 'babel-polyfill'   // To be sure that all the code will be ES5
+require("babel-polyfill")   // To be sure that all the code will be ES5
 
-import Nick from "nickjs" // Import our librairy
+const Nick = require("nickjs") // Import our librairy
 const nick = new Nick()   // Instantiate your "browser"
 
 nick.newTab(async (tab) => { // Create a new tab to browse the web

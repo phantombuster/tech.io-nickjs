@@ -1,8 +1,8 @@
 // { autofold
-import 'babel-polyfill'
+require("babel-polyfill")   // To be sure that all the code will be ES5
 
-import Nick from 'nickjs'
-const nick = new Nick()
+const Nick = require("nickjs") // Import our librairy
+const nick = new Nick()   // Instantiate your "browser"
 // }
 
 nick.newTab().then(async (tab) => {
