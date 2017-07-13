@@ -12,7 +12,7 @@ This will take less than 2 minutes and you only know how to code in JavaScript (
 # 1- Accessing the forum:
 
 We first need to access the site thanks to NickJS so we need to load the page and here we start:
-```javascript
+```language-javascript
 import 'babel-polyfill'   // To be sure that all the code will be ES5
 
 import Nick from "nickjs" // Import our librairy
@@ -34,7 +34,7 @@ nick.newTab(async (tab) => { // Create a new tab to browse the web
 # 2- Getting the data:
 
 Then we need to be sure the data is loaded, to do that nothing more simple:
-```javascript
+```
 nick.newTab(async (tab) => {
 	await tab.open("news.ycombinator.com")
 	await tab.waitUntilVisible("#hnmain")
@@ -44,7 +44,7 @@ nick.newTab(async (tab) => {
 
 And now we can scrape all the data we need with a little script and some jQuery.
 
-```javascript
+```
 await tab.inject("https://code.jquery.com/jquery-3.2.1.slim.min.js") // We're going to use jQuery to scrape
 const hackerNewsLinks = await tab.evaluate((arg, callback) => {
 	// Here we're in the page context. It's like being in your browser's inspector tool
@@ -64,7 +64,7 @@ const hackerNewsLinks = await tab.evaluate((arg, callback) => {
 We need to return the data, in a normal case we could save it in a file like a .CSV or .JSON.
 Here we are just going to `console.log()` it so we can see what we get:
 
-```javascript
+```
 console.log(JSON.stringify(hackerNewsLinks, null, 2)) // Show the formatted data
 ```
 
