@@ -170,4 +170,4 @@ You can now try it by yourself and create more (careful, on Tech.io the script i
 
 - You can clone the repo on <https://github.com/phantombuster/nickjs>.
 - The full documentation is available [here](https://github.com/phantombuster/nickjs/blob/master/README.md).
-- Any questions? Feel free to ask on <NickJS.org>.
+- Any questions? Feel free to ask on [NickJS.org](https://nickjs.org).
