@@ -1,9 +1,9 @@
 # How to scrape HackerNews with NickJS, the next gen scraping library
 
-Hello and welcome to this very first NickJS tutorial.
+Hello and welcome to this very first **NickJS** tutorial!
 
-Headless Web browsers are amazingly powerful but yet complicated to use.
-NickJS is the easiest wrapper on Headless Chrome and PhantomJS.
+**Headless Web browsers** are amazingly powerful but yet complicated to use.
+NickJS is the easiest wrapper on **Headless Chrome** and **PhantomJS**.
 It gives you access to all the features you need with less than 15 methods.
 
 Let's take a look at a simple use case.
@@ -13,12 +13,12 @@ If you want to scrape a web page, you'll always need to repeat the same three st
 * Wait for the actions to have an effect. There are only two possible things we can do: wait for specific DOM elements to appear or disappear.
 * Extract data from the page. Running a few lines of jQuery directly inside the DOM works every time.
 
-The scraping "Hello World" is a scraper for Hacker News. To do so, we'll apply the same three steps seen below.
+The scraping **"Hello World"** is a scraper for **Hacker News**. To do so, we'll apply the same three steps seen below.
 * Accessing the web page using its URL
 * Waiting for the data to be loaded
 * Get the data using jQuery
 
-This example will take us less than 2 minutes. You only need to be familiar with JavaScript ES2016+.
+This example will take us **less than 5 minutes**. You only need to be familiar with **JavaScript ES2016+**.
 
 # 0- The NickJS context
 
@@ -165,3 +165,9 @@ You can now try it by yourself and create more (careful, on Tech.io the script i
 # Run NickJS
 
 @[Test NickJS]({ "stubs": ["src/nick.js"], "command": "./build-launch.sh" })
+
+# Do you want to know more?
+
+- You can clone the repo on <https://github.com/phantombuster/nickjs>.
+- The full documentation is available [here](https://github.com/phantombuster/nickjs/blob/master/README.md).
+- Any questions? Feel free to ask on <NickJS.org>.
